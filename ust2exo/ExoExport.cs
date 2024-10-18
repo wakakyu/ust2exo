@@ -102,8 +102,8 @@ namespace ust2exo
                 // ファイルを閉じる
                 writer.Close();
 
-                MessageBox.Show("exoファイルの保存が完了しました");
-                Application.Exit();
+                DialogResult result = MessageBox.Show("exoファイルの保存が完了しました\nアプリケーションを終了しますか？", "ust2exo", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes) { Application.Exit(); }
             }
             else if (exo.Objects.Count == 0)
             {
